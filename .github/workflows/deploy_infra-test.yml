@@ -1,0 +1,15 @@
+---
+name: Deploy infra-test
+
+on:
+  push:
+    branches:
+      - "infra-test"
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/acr_deploy_reusable.yml
+    name: Deploy infra-test
+    with:
+      environment: infra-test
+    secrets: inherit
